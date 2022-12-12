@@ -1,8 +1,8 @@
 import FileReader from "../FileReader";
 import Day from "../templates/Day";
 
-export default class DayTemplate implements Day{
-    // reserved for day variable
+export default class Day5 implements Day {
+    day = 5
     getPartOne = (): number => {
         throw new Error("Method not implemented.");
     }

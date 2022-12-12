@@ -8,16 +8,12 @@ export default class Day4 implements Day {
         const input = FileReader.getStringData(this.day.toLocaleString())
         let overlaps = 0;
         for(let i=0; i<input.length; i++) {
-            const [blank, a1, a2, b1, b2] = input[i].match(inputRegex)!
-            const a1n = parseInt(a1)
-            const a2n = parseInt(a2)
-            const b1n = parseInt(b1)
-            const b2n = parseInt(b2)
-            if (a1n >= b1n && a2n <= b2n){
+            const [blank, a1, a2, b1, b2] = Array.from(input[i].match(inputRegex)!, x => parseInt(x))
+            if (a1 >= b1 && a2 <= b2){
                 overlaps++
                 continue;
             }
-            if (a1n <= b1n && a2n >= b2n) {
+            if (a1 <= b1 && a2 >= b2) {
                 overlaps++;
                 continue;
             }
@@ -30,16 +26,12 @@ export default class Day4 implements Day {
         const input = FileReader.getStringData(this.day.toLocaleString())
         let overlaps = 0;
         for(let i=0; i<input.length; i++) {
-            const [blank, a1, a2, b1, b2] = input[i].match(inputRegex)!
-            const a1n = parseInt(a1)
-            const a2n = parseInt(a2)
-            const b1n = parseInt(b1)
-            const b2n = parseInt(b2)
-            if (a2n >= b1n && a1n <= b1n){
+            const [blank, a1, a2, b1, b2] = Array.from(input[i].match(inputRegex)!, x => parseInt(x))
+            if (a2 >= b1 && a1 <= b1){
                 overlaps++
                 continue;
             }
-            if (b2n >= a1n && b1n <= a1n) {
+            if (b2 >= a1 && b1 <= a1) {
                 overlaps++;
                 continue;
             }
