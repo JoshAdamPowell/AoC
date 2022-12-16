@@ -14,10 +14,33 @@ export default class Day6 implements Day {
             if (input[i - 2] === input[i - 3]) continue;
             return i + 1
         }
-        throw new Error("Method not implemented.");
+        throw new Error("Not found");
     }
 
     getPartTwo = (): number => {
+        const input = Array.from(FileReader.getStringData(this.day.toLocaleString())[0])
+        for (let i = 13; i < input.length; i++) {
+            const testString = input.slice(i - 13, i + 1)
+            const result = this.areAllCharactersUnique(testString)
+            if (result) {
+                return i + 1
+            }
+
+        }
         throw new Error("Method not implemented.");
+    }
+
+    areAllCharactersUnique = (input: string[]): boolean => {
+        const uniqueLetters = new Set();
+            for (let i = 0; i < input.length; i++) {
+                const oldLength = uniqueLetters.size
+                uniqueLetters.add(input[i])
+                const newLength = uniqueLetters.size
+                if (oldLength !== newLength) {
+                    continue;
+                }
+                return false;
+            }
+        return true;
     }
 }
