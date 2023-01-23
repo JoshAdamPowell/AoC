@@ -1,3 +1,4 @@
+import Day7 from './2022/Day7';
 import Day6 from './2022/Day6';
 import Day5 from './2022/Day5';
 import Day4 from './2022/Day4';
@@ -14,6 +15,7 @@ const DayFactory = (day: string): Day => {
         case '4': return new Day4();
         case '5': return new Day5();
         case '6': return new Day6();
+        case '7': return new Day7();
         default: throw new Error(`Day ${day} not found`);
     }
 }
