@@ -7,7 +7,7 @@ const fetchData = async () => {
     const day = process.env.DAY
     const url = `https://adventofcode.com/${process.env.YEAR}/day/${day}/input`
     const response = await fetch(url, {headers: {cookie: `session=${process.env.COOKIE}`}})
-    fs.writeFileSync(`./src/data/${day}.txt`, await response.text())
+    fs.writeFileSync(`./src/data/${process.env.YEAR}/${day}.txt`, await response.text())
     console.log("Fetched data from advent of code.")
 }
 
