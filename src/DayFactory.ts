@@ -1,6 +1,6 @@
 import Day7 from './2022/Day7';
 import Day6 from './2022/Day6';
-import Day5 from './2022/Day5';
+import Day5 from './2015/Day5';
 import Day4 from './2022/Day4';
 import Day3 from './2022/Day3';
 import Day2 from './2022/Day2';
